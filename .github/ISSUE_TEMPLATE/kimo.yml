@@ -10,7 +10,7 @@ body:
     attributes:
       value: Thanks for taking your time to report the bug!
   - type: checkboxes
-    attribues:
+    attributes:
       label: Have you searched for existing issues?
       description: Please ensure your issue hasn't been reported yet.
       options:

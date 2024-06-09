@@ -8,7 +8,8 @@ title: kimo
 body:
   - type: markdown
     attributes:
-      value: Thanks for taking your time to report the bug!
+      value: |
+        Thanks for taking the time to report a bug!
   - type: checkboxes
     attributes:
       label: Prerequisites
@@ -21,44 +22,56 @@ body:
           required: true
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Issue Overview
   - type: textarea
     attributes:
-      label: Bug describtion
+      label: Bug Description
       description: |
-        What exactly happened? Please provide a detailed description of the issue.
+        What exactly happened?
+        
+        Please provide a detailed description of the issue.
 
-        _If multiple indipendant bugs occurred simultaneously, please report each issue separately._
+        _If multiple independent bugs occurred simultaneously, please report each issue separately._
       value: |
         <!--
-        Describe the bug you encoutered.
+        Describe the bug you encountered.
 
-        Use screenshot or GIF if possible, which are intuitive way to convey something.
+        Use screenshots or GIFs if possible, as they are intuitive ways to convey the problem.
         -->
         
         <!--
         ```ts
         Copy and paste any relevant error messages, log output, or other pertinent information.
 
-        Use multiple codeblocks for multiple messages.
+        Use multiple code blocks for multiple messages.
         ```
         -->
+    validations:
+      required: true
   - type: textarea
     attributes:
-      label: Expected behaivor
+      label: Expected Behavior
       description: |
-        What was the expected behavior? Describe the expected outcome or just your suggestion.
+        What was the expected behavior?
+        
+        Describe the expected outcome or your suggestion.
 
-        _You can skip this if it's obvious that the issue is a bug._
+        _You can skip this if it's obvious that the issue is an error._
   - type: markdown
     attributes:
       value: |
-        ## Steps to reproduce
+        ## Environment Details & Steps to Reproduce
   - type: input
     attributes:
-      label: Version information
+      label: Version Information
       description: |
-        Which version of Seia are you using? type the below command in your terminal.
-
+        Which version of Seia are you using?
+        
+        Type the following command in your terminal and paste the result:
+        
         ```sh
         seia --version
         ```
@@ -66,26 +79,37 @@ body:
       required: true
   - type: input
     attributes:
-      label: Package manager
+      label: Package Manager
       description: |
         Which package manager and version are you using?
         
-        Type the below command in your terminal.
+        Type the following commands in your terminal:
 
         ```sh
-        npm -v
-        yarn -v
-        pnpm -v
+        npm --version
+        yarn --version
+        pnpm --version
         ```
 
-        Have you tested with other package manager? Is this package manager specific issue?
+        Have you tested with other package managers? Is this issue specific to a package manager? You can provide multiple managers & versions in this case.
+        
         _Note: Some issues only arise with Yarn Berry._
+      placeholder: pnpm@9.1.4
+    validations:
+      required: true
   - type: textarea
     attributes:
-      label: Reproduction steps
+      label: Reproduction Steps
       description: |
         How can we reproduce the issue?
         
         Provide detailed steps or a reproducible scenario to help us understand and replicate the problem.
 
-        If you have reproduction repository, please provide its link.
+        If you have a reproduction repository, please provide its link.
+
+        If you have a dockerfile, that's also great. provide it too.
+      placeholder: |
+        1. clone the reproduction repository.
+        2. install dependencies.
+        3. run some commands.
+        4. open the browser and see the result.

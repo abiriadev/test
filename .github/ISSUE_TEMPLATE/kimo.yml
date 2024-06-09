@@ -1,64 +1,72 @@
-name: Bug Report
-description: File a bug report.
-title: "[Bug]: "
-labels: ["bug", "triage"]
-projects: ["octo-org/1", "octo-org/44"]
+name: Bug
+description: BBBug!
 assignees:
-  - octocat
+  - abiriadev
+labels:
+  - Bug
+title: kimo
 body:
   - type: markdown
     attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
-  - type: textarea
-    id: what-happened
-    attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
-    validations:
-      required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
+      value: Thanks for taking your time to report the bug!
   - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com). 
+    attribues:
+      label: Have you searched for existing issues?
+      description: Please ensure your issue hasn't been reported yet.
       options:
-        - label: I agree to follow this project's Code of Conduct
+        - label: I've checked for existing issues
           required: true
+      validations:
+        required: true
+  - type: textarea
+    attributes:
+      label: What exactly happened?
+      description: |
+        Provide a detailed description of the issue.
+
+        - If multiple indipendant bugs occurred simultaneously, please report each issue separately.
+  - type: textarea
+    attributes:
+      label: Errors or log messages
+      description: |
+        Copy and paste any relevant error messages, log output, or other pertinent information.
+
+        Don't forget to use code blocks(\`\`\`) for better readablity.
+  - type: textarea
+    attributes:
+      label: Can you provide a screenshot?
+      description: If possible, include a screenshot illustrating the issue.
+  - type: textarea
+    attributes:
+      label: What was the expected behavior?
+      description: |
+        Describe the expected outcome or just your suggestion.
+
+        - You can skip this if it's obvious that the issue is a bug.
+  - type: textarea
+    attributes:
+      label: How can we reproduce the issue?
+      description: |
+        Provide detailed steps or a reproducible scenario to help us understand and replicate the problem.
+  - type: input
+    attributes:
+      label: Which version of Seia are you using?
+      description: |
+        type
+
+        ```sh
+        seia --version
+        ```
+
+        in your terminal.
+  - type: input
+    attributes:
+      label: Which package manager and version are you using?
+      description: Note: Some issues may arise with Yarn Berry.
+  - type: textarea
+    attributes:
+      label: (optional) additional information about your environment.
+      description: |
+        Tell me more about your environment if you use very uncommon environment, or the bug occure in very specific contexts.
+
+        Like your operating system, browser, docker, etc.

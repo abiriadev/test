@@ -11,8 +11,11 @@ body:
       value: Thanks for taking your time to report the bug!
   - type: checkboxes
     attributes:
-      label: Have you searched for existing issues?
-      description: Please ensure your issue hasn't been reported yet.
+      label: Prerequisites
+      description: |
+        Have you searched for existing issues?
+        
+        Please ensure your issue hasn't been reported yet.
       options:
         - label: I've checked for existing issues
           required: true
@@ -20,54 +23,69 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: What exactly happened?
+      label: Bug describtion
       description: |
-        Provide a detailed description of the issue.
+        What exactly happened? Please provide a detailed description of the issue.
 
-        - If multiple indipendant bugs occurred simultaneously, please report each issue separately.
-  - type: textarea
-    attributes:
-      label: Errors or log messages
-      description: |
+        _If multiple indipendant bugs occurred simultaneously, please report each issue separately._
+      value: |
+        <!--
+        Describe the bug you encoutered.
+
+        Use screenshot or GIF if possible, which are intuitive way to convey something.
+        -->
+        
+        <!--
+        ```ts
         Copy and paste any relevant error messages, log output, or other pertinent information.
 
-        Don't forget to use code blocks(\`\`\`) for better readablity.
+        Use multiple codeblocks for multiple messages.
+        ```
+        -->
   - type: textarea
     attributes:
-      label: Can you provide a screenshot?
-      description: If possible, include a screenshot illustrating the issue.
-  - type: textarea
-    attributes:
-      label: What was the expected behavior?
+      label: Expected behaivor
       description: |
-        Describe the expected outcome or just your suggestion.
+        What was the expected behavior? Describe the expected outcome or just your suggestion.
 
-        - You can skip this if it's obvious that the issue is a bug.
-  - type: textarea
+        _You can skip this if it's obvious that the issue is a bug._
+  - type: markdown
     attributes:
-      label: How can we reproduce the issue?
-      description: |
-        Provide detailed steps or a reproducible scenario to help us understand and replicate the problem.
+      value: |
+        ## Steps to reproduce
   - type: input
     attributes:
-      label: Which version of Seia are you using?
+      label: Version information
       description: |
-        type
+        Which version of Seia are you using? type the below command in your terminal.
 
         ```sh
         seia --version
         ```
-
-        in your terminal.
+    validations:
+      required: true
   - type: input
     attributes:
-      label: Which package manager and version are you using?
+      label: Package manager
       description: |
-        Note: Some issues may arise with Yarn Berry.
+        Which package manager and version are you using?
+        
+        Type the below command in your terminal.
+
+        ```sh
+        npm -v
+        yarn -v
+        pnpm -v
+        ```
+
+        Have you tested with other package manager? Is this package manager specific issue?
+        _Note: Some issues only arise with Yarn Berry._
   - type: textarea
     attributes:
-      label: (optional) additional information about your environment.
+      label: Reproduction steps
       description: |
-        Tell me more about your environment if you use very uncommon environment, or the bug occure in very specific contexts.
+        How can we reproduce the issue?
+        
+        Provide detailed steps or a reproducible scenario to help us understand and replicate the problem.
 
-        Like your operating system, browser, docker, etc.
+        If you have reproduction repository, please provide its link.

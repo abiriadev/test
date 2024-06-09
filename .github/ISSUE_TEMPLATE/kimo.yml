@@ -62,7 +62,8 @@ body:
   - type: input
     attributes:
       label: Which package manager and version are you using?
-      description: Note: Some issues may arise with Yarn Berry.
+      description: |
+        Note: Some issues may arise with Yarn Berry.
   - type: textarea
     attributes:
       label: (optional) additional information about your environment.
